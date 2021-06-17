@@ -1,0 +1,8 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.swp
+*.swo
+.idea/
+*.user
