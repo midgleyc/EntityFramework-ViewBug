@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace ViewBug.Jobs
 {
-    public class JobsConfig : IEntityTypeConfiguration<JobView>
+    public class JobsConfig : IEntityTypeConfiguration<Job>
     {
-        public void Configure(EntityTypeBuilder<JobView> builder)
+        public void Configure(EntityTypeBuilder<Job> builder)
         {
             builder.ToTable("jobs")
                 .HasKey(x => x.Id);
