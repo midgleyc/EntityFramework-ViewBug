@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ViewBug.Extensions;
 using ViewBug.Jobs;
 
 namespace ViewBug
@@ -16,6 +17,8 @@ namespace ViewBug
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.EnsureSnakeCase();
 
             builder.ApplyConfiguration(new JobsConfig());
             builder.ApplyConfiguration(new JobViewsConfig());
