@@ -18,6 +18,7 @@ namespace ViewBug
             Assert.NotNull(jobView.GetViewName());
             Assert.Null(jobView.GetTableName());
         }
+
         [Test]
         public void ViewNameShouldBeCorrectForTable()
         {
@@ -29,6 +30,15 @@ namespace ViewBug
 
             Assert.Null(jobView.GetViewName());
             Assert.NotNull(jobView.GetTableName());
+        }
+
+        [Test]
+        public void ShouldCreate()
+        {
+            var context = MakeContext();
+
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
         }
 
         private TestDbContext MakeContext()
