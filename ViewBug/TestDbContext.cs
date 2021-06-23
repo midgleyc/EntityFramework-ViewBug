@@ -18,10 +18,10 @@ namespace ViewBug
         {
             base.OnModelCreating(builder);
 
-            builder.EnsureSnakeCase();
-
             builder.ApplyConfiguration(new JobsConfig());
             builder.ApplyConfiguration(new JobViewsConfig());
+
+            builder.EnsureSnakeCase();
         }
     }
 }

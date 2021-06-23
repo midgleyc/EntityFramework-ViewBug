@@ -9,6 +9,11 @@ namespace ViewBug.Extensions
         {
             foreach (IMutableEntityType entity in builder.Model.GetEntityTypes())
             {
+                if (entity.GetViewName() != null)
+                {
+                    continue;
+                }
+
                 entity.SetTableName(entity.GetTableName().ToSnakeCase());
 
                 foreach (IMutableProperty property in entity.GetProperties())
